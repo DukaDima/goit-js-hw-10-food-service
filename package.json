@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://dukadima.github.io/goit-js-hw-10-food-service/",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /goit-js-hw-10-food-service/"
   },
@@ -17,7 +17,6 @@
   "bugs": {
     "url": "https://github.com/DukaDima/goit-js-hw-10-food-service/issues"
   },
-  "homepage": "https://dukadima.github.io/goit-js-hw-10-food-service/",
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-handlebars-precompile": "^1.0.2"
