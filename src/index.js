@@ -19,8 +19,8 @@ const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
-console.log(Theme.LIGHT)
-console.log(Theme.DARK)
+// console.log(Theme.LIGHT)
+// console.log(Theme.DARK)
 //создание меню ---------------------------------------------
 
 const menuList = createMenuCards(menuCards)
