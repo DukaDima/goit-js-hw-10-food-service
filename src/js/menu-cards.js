@@ -1,1 +1,0 @@
-import menuCardTmpl from '../templates/menu-card.hbs'
