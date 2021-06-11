@@ -2332,16 +2332,12 @@ var refs = {
   body: document.body,
   menu: document.querySelector('.js-menu'),
   checkBox: document.querySelector('#theme-switch-toggle')
-}; // console.log(refs.checkBox)
-
-console.log(refs.body); //массив тем -------------------------------------------------
+}; //массив тем -------------------------------------------------
 
 var Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme'
-};
-console.log(Theme.LIGHT);
-console.log(Theme.DARK); //создание меню ---------------------------------------------
+}; //создание меню ---------------------------------------------
 
 var menuList = createMenuCards(_menu.default);
 refs.menu.insertAdjacentHTML('beforeend', menuList);
@@ -2353,13 +2349,30 @@ function createMenuCards(menuCards) {
 ; // переключение тем------------------------------------------
 
 refs.checkBox.addEventListener('change', onChange);
-refs.body.classList.add("light-theme");
+
+if (!localStorage.getItem('thema')) {
+  refs.body.classList.add(Theme.LIGHT);
+  localStorage.setItem('thema', refs.body.classList);
+}
+
+refs.body.className = localStorage.getItem('thema');
 
 function onChange() {
-  // console.log("Состояние чекбокса изменнено")
-  refs.body.classList.toggle("dark-theme");
-  refs.body.classList.toggle("light-theme");
+  refs.body.classList.toggle(Theme.DARK);
+  refs.body.classList.toggle(Theme.LIGHT);
+  return localStorage.setItem('thema', refs.body.classList);
+} // проверка кнопки на checked----------------------
+
+
+var currentClass = localStorage.getItem('thema');
+
+if (currentClass === Theme.DARK) {
+  refs.checkBox.setAttribute("checked", true);
+} else {
+  refs.checkBox.removeAttribute("checked");
 }
+
+;
 },{"./templates/menu-card.hbs":"templates/menu-card.hbs","./menu.json":"menu.json"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -2388,7 +2401,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51541" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52658" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
